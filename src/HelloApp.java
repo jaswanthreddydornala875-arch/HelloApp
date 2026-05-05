@@ -4,11 +4,13 @@ public class HelloApp {
 
         if (args.length > 0) {
             StringBuilder nameBuilder = new StringBuilder();
-            for (int i = 0; i < args.length; i++) {
-                nameBuilder.append(args[i]);
-                if (i < args.length - 1) {
+            boolean first = true;
+            for (String arg : args) {
+                if (!first) {
                     nameBuilder.append(", ");
                 }
+                nameBuilder.append(arg);
+                first = false;
             }
             name = nameBuilder.toString();
         }
